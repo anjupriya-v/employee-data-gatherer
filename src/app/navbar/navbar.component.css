@@ -1,0 +1,18 @@
+.form-logo {
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+  margin-left: 10px;
+}
+.brand {
+  color: white;
+}
+.navbar {
+  position: sticky;
+  top: 0px;
+}
+
+.showDetailsButton {
+  margin-right: 20px;
+  color: white;
+}

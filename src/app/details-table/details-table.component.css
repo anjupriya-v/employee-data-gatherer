@@ -1,0 +1,23 @@
+.table-div {
+  width: 100%;
+  overflow-x: scroll;
+}
+.nothingSaved {
+  width: 20%;
+  height: 20%;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  color: black;
+  text-align: center;
+  background-color: white !important;
+  background-blend-mode: multiply !important;
+}
+span {
+  color: black;
+  background-color: white !important;
+}
+th,
+td {
+  padding-right: 20px !important;
+  text-align: center;
+}

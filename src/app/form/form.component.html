@@ -1,0 +1,169 @@
+<div class="container formDiv">
+  <h3>Employee Details</h3>
+  <p>(Please fill out your information below)</p>
+  <hr />
+  <form
+    #formDirective="ngForm"
+    ngNativeValidate
+    [formGroup]="employeeDetails"
+    class="row g-3"
+    (submit)="onSubmit(formDirective)"
+  >
+    <div class="col-md-6">
+      <label for="employeeName" class="form-label">Employee Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="employeeName"
+        formControlName="employeeName"
+        required
+      />
+      <div
+        *ngIf="
+          (submitted || f['employeeName'].touched) && f['employeeName'].invalid
+        "
+      >
+        <div
+          class="error"
+          *ngIf="
+            f['employeeName'].errors && f['employeeName'].errors['required']
+          "
+        >
+          full Name is required*
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <label for="employeeId" class="form-label">Employee ID</label>
+      <input
+        type="number"
+        class="form-control"
+        id="employeeId"
+        formControlName="employeeId"
+        required
+      />
+      <div
+        *ngIf="
+          (submitted || f['employeeId'].touched) && f['employeeId'].invalid
+        "
+      >
+        <div
+          class="error"
+          *ngIf="f['employeeId'].errors && f['employeeId'].errors['required']"
+        >
+          employee Id is required*
+        </div>
+      </div>
+    </div>
+    <div class="col-12">
+      <label for="jobTitle" class="form-label">Job Title</label>
+      <input
+        type="text"
+        class="form-control"
+        id="jobTitle"
+        formControlName="jobTitle"
+        required
+      />
+      <div
+        *ngIf="(submitted || f['jobTitle'].touched) && f['jobTitle'].invalid"
+      >
+        <div
+          class="error"
+          *ngIf="f['jobTitle'].errors && f['jobTitle'].errors['required']"
+        >
+          jobTitle is required*
+        </div>
+      </div>
+    </div>
+    <div class="col-12">
+      <label for="email" class="form-label">Email Id</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        formControlName="email"
+        required
+      />
+      <div *ngIf="(submitted || f['email'].touched) && f['email'].invalid">
+        <div
+          class="error"
+          *ngIf="f['email'].errors && f['email'].errors['required']"
+        >
+          email is required*
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <label for="phoneNumber" class="form-label">Phone Number</label>
+      <input
+        type="number"
+        class="form-control"
+        id="phoneNumber"
+        formControlName="phoneNumber"
+        required
+      />
+      <div
+        *ngIf="
+          (submitted || f['phoneNumber'].touched) && f['phoneNumber'].invalid
+        "
+      >
+        <div
+          class="error"
+          *ngIf="f['phoneNumber'].errors && f['phoneNumber'].errors['required']"
+        >
+          phone number is required*
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <label for="location" class="form-label">Location</label>
+      <input
+        type="text"
+        class="form-control"
+        id="location"
+        formControlName="location"
+        required
+      />
+      <div
+        *ngIf="(submitted || f['location'].touched) && f['location'].invalid"
+      >
+        <div
+          class="error"
+          *ngIf="f['location'].errors && f['location'].errors['required']"
+        >
+          Location is required*
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <label for="emergencyContact" class="form-label">Emergency Contact</label>
+      <input
+        type="text"
+        class="form-control"
+        id="emergencyContact"
+        placeholder="phone number - name (relationship)"
+        formControlName="emergencyContact"
+        required
+      />
+      <div
+        *ngIf="
+          (submitted || f['emergencyContact'].touched) &&
+          f['emergencyContact'].invalid
+        "
+      >
+        <div
+          class="error"
+          *ngIf="
+            f['emergencyContact'].errors &&
+            f['emergencyContact'].errors['required']
+          "
+        >
+          Emergency Contact is required*
+        </div>
+      </div>
+    </div>
+    <div class="col-12 submitButton">
+      <button type="submit" class="btn btn-primary submit">Add</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,39 @@
+<div class="table-div">
+  <table class="table table-hover table-striped">
+    <thead class="table-dark">
+      <tr>
+        <th>Employee Name</th>
+        <th>Employee Id</th>
+        <th>Job Title</th>
+        <th>Email Id</th>
+        <th>Phone Number</th>
+        <th>Location</th>
+        <th>Emergency Contact</th>
+      </tr>
+    </thead>
+
+    <tbody *ngIf="isDetailsPresent; else notPresent">
+      <tr *ngFor="let employee of allEmployeeDetails">
+        <td>{{ employee.employeeName }}</td>
+        <td>{{ employee.employeeId }}</td>
+        <td>{{ employee.jobTitle }}</td>
+        <td>{{ employee.email }}</td>
+        <td>{{ employee.phoneNumber }}</td>
+        <td>{{ employee.location }}</td>
+        <td>{{ employee.emergencyContact }}</td>
+      </tr>
+    </tbody>
+    <ng-template #notPresent>
+      <tr class="nothingSaved">
+        <td colspan="7">
+          <img
+            class="nothingSaved"
+            src="../../assets/images/nothing_saved.png"
+          />
+          <br />
+          <span>Nothing is saved yet!</span>
+        </td>
+      </tr>
+    </ng-template>
+  </table>
+</div>
